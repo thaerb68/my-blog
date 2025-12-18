@@ -374,3 +374,20 @@ img {
   height: 400px;
   object-fit: cover;
 }
+
+/* Reading Progress Bar */
+#reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 0%;
+  background: linear-gradient(90deg, #4f46e5, #06b6d4);
+  z-index: 9999;
+  transition: width 0.1s ease-out;
+}
+
+/* Avoid content hiding under fixed bar */
+body {
+  padding-top: 4px;
+}

@@ -10,6 +10,9 @@
 </head>
 
 <body>
+
+    <div id="reading-progress"></div>
+
     <div class="container">
         <!-- Navigation Bar -->
         <nav class="top-nav">
@@ -836,6 +839,22 @@
                 orchestration strategies for your team.</p>
         </footer>
     </div>
+
+    <!-- SCRIPT FOR PROGRESS BAR -->
+    <script>
+        const progressBar = document.getElementById("reading-progress");
+
+        window.addEventListener("scroll", () => {
+            const scrollTop = window.scrollY;
+            const docHeight =
+                document.documentElement.scrollHeight -
+                document.documentElement.clientHeight;
+
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            progressBar.style.width = scrollPercent + "%";
+        });
+    </script>
+
 </body>
 
 </html>
