@@ -4,36 +4,402 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Thaer M Barakat – AI Automation, Software Engineering & Digital Transformation</title>
+    <title>Thaer M Barakat – AI Automation, Business Process Optimization & Digital Transformation</title>
 
     <meta name="description"
-        content="Senior technology and business transformation professional writing about AI automation, software engineering, and practical enterprise systems. Experience across GCC markets." />
-
+        content="Senior technology and business transformation professional writing about AI automation, business process optimization, and practical enterprise systems. Experience across GCC markets." />
     <meta name="author" content="Thaer M Barakat" />
 
     <!-- Open Graph (LinkedIn / Social Preview) -->
-    <meta property="og:title" content="Thaer M Barakat – AI Automation & Software Engineering" />
+    <meta property="og:title" content="Thaer M Barakat – AI Automation & Business Process Optimization" />
     <meta property="og:description"
-        content="Practical insights on AI automation, software engineering, and digital transformation from a senior GCC-based professional." />
+        content="Practical insights on AI automation, business process optimization, and digital transformation from a senior GCC-based professional." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://thaerb68.github.io/my-blog/" />
 
-    <link rel="stylesheet" href="css/blog-index.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #111827;
+            background: linear-gradient(135deg, #0B1F33 0%, #3A5A78 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #0B1F33 0%, #0F172A 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+            border-radius: 16px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        header>* {
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 3em;
+            font-weight: 800;
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+        }
+
+        .tagline {
+            font-size: 1.3em;
+            color: #cbd5e0;
+            font-weight: 300;
+            margin-bottom: 30px;
+        }
+
+        nav {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #2FB8C6;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
+            border-radius: 6px;
+        }
+
+        nav a:hover {
+            background: rgba(47, 184, 198, 0.2);
+            color: white;
+        }
+
+        /* Main Content */
+        main {
+            background: white;
+            border-radius: 16px;
+            padding: 50px 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            margin-bottom: 40px;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-bottom: 40px;
+            border-bottom: 2px solid #F5F7FA;
+        }
+
+        .intro h2 {
+            font-size: 2.2em;
+            color: #0B1F33;
+            margin-bottom: 15px;
+        }
+
+        .intro p {
+            font-size: 1.2em;
+            color: #6B7280;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* Blog Posts Grid */
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .post-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 2px solid #F5F7FA;
+        }
+
+        .post-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(47, 184, 198, 0.2);
+            border-color: #2FB8C6;
+        }
+
+        .post-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            background: linear-gradient(135deg, #2FB8C6 0%, #3A5A78 100%);
+        }
+
+        .post-content {
+            padding: 25px;
+        }
+
+        .post-meta {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-size: 0.85em;
+            color: #6B7280;
+        }
+
+        .post-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .post-meta span::before {
+            content: '•';
+            margin-right: 5px;
+        }
+
+        .post-meta span:first-child::before {
+            content: '📅';
+            margin-right: 0;
+        }
+
+        .post-card h3 {
+            font-size: 1.5em;
+            color: #0B1F33;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .post-card h3 a {
+            color: #0B1F33;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .post-card h3 a:hover {
+            color: #2FB8C6;
+        }
+
+        .post-excerpt {
+            color: #6B7280;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .post-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .tag {
+            background: #F5F7FA;
+            color: #3A5A78;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+
+        .read-more {
+            display: inline-block;
+            color: #2FB8C6;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .read-more:hover {
+            color: #3A5A78;
+            transform: translateX(5px);
+        }
+
+        .read-more::after {
+            content: ' →';
+        }
+
+        /* About Section */
+        #about {
+            background: linear-gradient(135deg, #F5F7FA 0%, #e5e9ef 100%);
+            padding: 50px;
+            border-radius: 12px;
+            margin-top: 60px;
+            border-left: 5px solid #2FB8C6;
+        }
+
+        #about h2 {
+            font-size: 2em;
+            color: #0B1F33;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #2FB8C6;
+        }
+
+        #about p {
+            font-size: 1.15em;
+            color: #6B7280;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        #about ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        #about li {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            color: #0B1F33;
+            font-size: 1.05em;
+            line-height: 1.6;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            border-left: 3px solid #2FB8C6;
+            transition: all 0.3s ease;
+        }
+
+        #about li:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(47, 184, 198, 0.15);
+        }
+
+        #about li::before {
+            content: '✓';
+            color: #2FB8C6;
+            font-weight: bold;
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+
+        /* Footer */
+        footer {
+            background: #0B1F33;
+            color: #a0aec0;
+            padding: 40px;
+            text-align: center;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-content>p {
+            margin-bottom: 20px;
+            font-size: 0.95em;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            color: #2FB8C6;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
+            border-radius: 6px;
+        }
+
+        .social-links a:hover {
+            background: rgba(47, 184, 198, 0.2);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .tagline {
+                font-size: 1.1em;
+            }
+
+            header,
+            main,
+            footer {
+                padding: 30px 20px;
+            }
+
+            .posts-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .intro h2 {
+                font-size: 1.8em;
+            }
+
+            #about {
+                padding: 30px 20px;
+            }
+
+            #about ul {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                gap: 15px;
+            }
+        }
+    </style>
 </head>
 
 <body>
     <div class="container">
-
         <header>
-            <!-- ONE clear H1 -->
             <h1>Thaer M Barakat</h1>
-
-            <!-- Professional, not hobbyist -->
-            <p class="tagline">
-                AI Automation • Software Engineering • Digital Transformation
-            </p>
-
+            <p class="tagline">AI Automation • Business Process Optimization • Digital Transformation</p>
             <nav>
                 <a href="#home">Home</a>
                 <a href="#blog">Blog</a>
@@ -43,54 +409,39 @@
         </header>
 
         <main id="home">
-
-            <!-- HERO / VALUE STATEMENT -->
             <section class="intro">
-                <h2>Practical AI & Software Engineering Insights</h2>
+                <h2>Practical AI & Business Automation Insights</h2>
                 <p>
-                    I write about designing and implementing AI-driven automation, modern software systems,
-                    and enterprise-ready architectures — with a focus on real-world adoption, not hype.
+                    I write about designing and implementing AI-driven automation, intelligent business processes,
+                    and enterprise-ready systems — with a focus on real-world ROI and measurable outcomes, not hype.
                 </p>
             </section>
 
-            <!-- BLOG POSTS -->
             <section id="blog" class="posts-grid">
-
                 <article class="post-card">
                     <img src="images/collaborative-intelligence.png"
                         alt="Multi-agent AI collaboration in software development" class="post-image" />
-
                     <div class="post-content">
                         <div class="post-meta">
                             <span>December 2025</span>
                             <span>12 min read</span>
                         </div>
-
                         <h3>
-                            <a href="posts/agent-orchestrated-dev-cycles.html">
-                                Agent-Orchestrated Development Cycles
-                            </a>
+                            <a href="posts/agent-orchestrated-dev-cycles.html">Agent-Orchestrated Development Cycles</a>
                         </h3>
-
                         <div class="post-tags">
                             <span class="tag">AI Automation</span>
                             <span class="tag">Multi-Agent Systems</span>
-                            <span class="tag">Software Engineering</span>
+                            <span class="tag">Development Workflows</span>
                         </div>
-
                         <p class="post-excerpt">
-                            How multi-agent AI workflows are reshaping modern software delivery.
-                            A structured look at agent collaboration across planning, development,
-                            testing, and delivery.
+                            How multi-agent AI workflows are reshaping modern software delivery. A structured look at
+                            agent collaboration across planning, development, testing, and delivery.
                         </p>
-
-                        <a href="posts/agent-orchestrated-dev-cycles.html" class="read-more">
-                            Read full article
-                        </a>
+                        <a href="posts/agent-orchestrated-dev-cycles.html" class="read-more">Read full article</a>
                     </div>
                 </article>
 
-                <!-- FUTURE POSTS PLACEHOLDER -->
                 <article class="post-card" style="opacity: 0.6;">
                     <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=220&fit=crop"
                         alt="AI systems architecture concept" class="post-image" />
@@ -99,47 +450,47 @@
                             <span>Coming Soon</span>
                         </div>
                         <h3>Upcoming Articles</h3>
+                        <div class="post-tags">
+                            <span class="tag">AI Systems</span>
+                            <span class="tag">Architecture</span>
+                        </div>
                         <p class="post-excerpt">
-                            Topics will include LLM fine-tuning, production AI systems,
-                            and automation architecture patterns.
+                            Topics will include LLM fine-tuning, production AI systems, and automation architecture
+                            patterns.
                         </p>
                     </div>
                 </article>
-
             </section>
 
-            <!-- ABOUT (VERY IMPORTANT FOR RECRUITERS) -->
             <section id="about">
                 <h2>About Me</h2>
                 <p>
-                    I am a senior technology professional with experience across AI automation,
-                    business analysis, and digital transformation initiatives.
-                    My work focuses on building practical systems that improve efficiency
-                    and decision-making in real organizations.
+                    I am a senior technology professional with experience across AI automation, business analysis, and
+                    digital transformation initiatives. My work focuses on building practical systems that improve
+                    efficiency, reduce costs, and drive measurable business outcomes in real organizations.
                 </p>
-
                 <ul>
-                    <li>20+ years across IT, software, and business transformation</li>
+                    <li>20+ years across IT, business automation, and digital transformation</li>
                     <li>Experience across GCC markets (UAE and region)</li>
-                    <li>Background in engineering, business, and enterprise systems</li>
-                    <li>Focus areas: AI automation, workflow orchestration, modern software architecture</li>
+                    <li>Background in engineering, business analysis, and enterprise systems</li>
+                    <li>Focus areas: AI automation, workflow orchestration, intelligent process automation</li>
+                    <li>Expertise in translating business requirements into automated solutions</li>
+                    <li>Track record of implementing AI-driven systems that deliver ROI</li>
                 </ul>
             </section>
-
         </main>
 
         <footer id="contact">
             <div class="footer-content">
                 <p>&copy; 2025 Thaer M Barakat. All rights reserved.</p>
-
                 <div class="social-links">
-                    <a href="https://www.linkedin.com/in/thaerb68/" target="_blank">LinkedIn</a>
-                    <a href="https://github.com/thaerb68" target="_blank">GitHub</a>
-                    <a href="mailto:thaer.barakat@gmail.com">Email</a>
+                    <a href="https://www.linkedin.com/in/thaerb68/" target="_blank"
+                        rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://github.com/thaerb68" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="mailto:thaerb68@gmail.com">Email</a>
                 </div>
             </div>
         </footer>
-
     </div>
 </body>
 
