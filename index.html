@@ -55,6 +55,23 @@
             overflow: hidden;
         }
 
+        .header-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+
+        .author-photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #2FB8C6;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
         header::before {
             content: '';
             position: absolute;
@@ -372,6 +389,16 @@
                 padding: 30px 20px;
             }
 
+            .header-author {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .author-photo {
+                width: 70px;
+                height: 70px;
+            }
+
             .posts-grid {
                 grid-template-columns: 1fr;
             }
@@ -398,7 +425,10 @@
 <body>
     <div class="container">
         <header>
-            <h1>Thaer M Barakat</h1>
+            <div class="header-author">
+                <img src="./images/author-thaer.webp" alt="Thaer M Barakat - Technology Professional" class="author-photo">
+                <h1>Thaer M Barakat</h1>
+            </div>
             <p class="tagline">AI Automation • Business Process Optimization • Digital Transformation</p>
             <nav>
                 <a href="#home">Home</a>
