@@ -345,6 +345,60 @@ footer {
   font-size: 0.9em;
 }
 
+/* Share Section */
+.share-section {
+  margin-top: 20px;
+}
+
+.share-section p {
+  color: #cbd5e0;
+  margin-bottom: 15px;
+  font-size: 1em;
+}
+
+.share-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: rgba(47, 184, 198, 0.1);
+  color: #2fb8c6;
+  border: 1px solid #2fb8c6;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9em;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.share-btn:hover {
+  background: #2fb8c6;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(47, 184, 198, 0.3);
+  text-decoration: none;
+}
+
+.share-btn svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.share-btn.copied {
+  background: #10b981;
+  border-color: #10b981;
+  color: white;
+}
+
 @media (max-width: 768px) {
   body {
     padding: 10px;
