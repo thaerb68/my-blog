@@ -16,8 +16,8 @@
     --bg-1: #0B1F33;            /* deep navy — matches posts */
     --bg-2: #0F172A;            /* near-black navy */
     --bg-3: #3A5A78;            /* slate */
-    --paper: #FFFFFF;           /* content surface */
-    --paper-2: #F5F7FA;         /* secondary surface */
+    --paper: #FBFAF6;           /* content surface — warm cream, matches posts */
+    --paper-2: #F5F2EA;         /* secondary surface — matches posts */
     --paper-3: #E5E9EF;
     --ink: #0B1F33;             /* primary text on light */
     --ink-2: #1F2937;
@@ -98,7 +98,7 @@
   header.hero {
     background: linear-gradient(135deg, var(--bg-1) 0%, var(--bg-2) 100%);
     color: var(--paper);
-    padding: 72px 56px 64px;
+    padding: 56px 56px 52px;
     position: relative;
     overflow: hidden;
   }
@@ -112,7 +112,7 @@
   header.hero > * { position: relative; z-index: 1; }
 
   .hero-grid {
-    max-width: 980px;
+    max-width: 880px;
   }
   .eyebrow {
     display: inline-flex;
@@ -123,7 +123,7 @@
     text-transform: uppercase;
     color: var(--accent);
     font-weight: 600;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
   }
   .eyebrow .pulse {
     width: 7px; height: 7px;
@@ -138,21 +138,22 @@
     100% { box-shadow: 0 0 0 0 rgba(47,184,198,0); }
   }
   h1.hero-title {
-    font-size: clamp(40px, 5.6vw, 76px);
-    line-height: 1.04;
-    letter-spacing: -0.025em;
-    font-weight: 700;
-    margin: 0 0 24px;
+    font-size: clamp(30px, 3.2vw, 44px);
+    line-height: 1.15;
+    letter-spacing: -0.018em;
+    font-weight: 600;
+    margin: 0 0 20px;
     color: var(--paper);
     text-wrap: balance;
+    max-width: 760px;
   }
-  h1.hero-title .accent { color: var(--accent); }
+  h1.hero-title .accent { color: var(--accent); font-weight: 600; }
   .hero-lede {
-    font-size: 18px;
-    line-height: 1.6;
+    font-size: 16px;
+    line-height: 1.65;
     color: var(--on-dark);
-    max-width: 640px;
-    margin: 0 0 32px;
+    max-width: 620px;
+    margin: 0 0 28px;
     text-wrap: pretty;
   }
   .author-block {
@@ -725,13 +726,13 @@
   }
   @media (max-width: 720px) {
     body { padding: 10px; }
-    header.hero { padding: 48px 28px 40px; }
+    header.hero { padding: 40px 24px 36px; }
     .top-nav { padding: 14px 20px; }
     .top-nav-links { gap: 16px; font-size: 0.85em; }
     .section-strip, .featured, .archive, .about, footer.foot { padding-left: 24px; padding-right: 24px; }
     .archive-grid { grid-template-columns: 1fr; gap: 24px; }
     .credentials { grid-template-columns: 1fr; }
-    h1.hero-title { font-size: 36px; }
+    h1.hero-title { font-size: 26px; }
     .about-grid { grid-template-columns: 1fr; gap: 24px; }
     .foot-grid { flex-direction: column; align-items: flex-start; }
     .foot-links { flex-wrap: wrap; }
@@ -758,9 +759,7 @@
     <div class="hero-grid">
       <div class="eyebrow"><span class="pulse"></span>Updated May 2026</div>
       <h1 class="hero-title">
-        AI automation, business&nbsp;process,<br />
-        and the <span class="accent">enterprise systems</span><br />
-        that quietly run modern&nbsp;operations.
+        AI automation, business process, and the <span class="accent">enterprise systems</span> that quietly run modern operations.
       </h1>
       <p class="hero-lede">
         A working professional's notes on what actually ships in production —
@@ -1029,7 +1028,7 @@
       <div class="foot-links">
         <a href="https://www.linkedin.com/in/thaerb68/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a href="https://calendly.com/thaerb68" target="_blank" rel="noopener noreferrer">Book a Call</a>
-        <a href="mailto:thaerb68@gmail.com" target="_blank" rel="noopener noreferrer">Email</a>
+        <a href="/cdn-cgi/l/email-protection#d6a2beb7b3a4b4e0ee96b1bbb7bfbaf8b5b9bb" target="_blank" rel="noopener noreferrer">Email</a>
       </div>
     </div>
   </footer>
