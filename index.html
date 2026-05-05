@@ -1,833 +1,1052 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thaer M Barakat – AI Automation, Business Process Optimization & Digital Transformation</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Thaer M Barakat — AI Automation, Business Process & Enterprise Systems</title>
+<meta name="description" content="Senior technology professional writing on AI automation, business process optimization, and enterprise systems. GCC-based, 20+ years." />
+<meta name="author" content="Thaer M Barakat" />
+<meta property="og:title" content="Thaer M Barakat — AI Automation & Business Process" />
+<meta property="og:description" content="Practitioner notes on AI automation, business process optimization, and enterprise systems." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://thaerb68.github.io/my-blog/" />
 
-    <meta name="description"
-        content="Senior technology and business transformation professional writing about AI automation, business process optimization, and practical enterprise systems. Experience across GCC markets." />
-    <meta name="author" content="Thaer M Barakat" />
+<style>
+  :root {
+    --bg-1: #0B1F33;            /* deep navy — matches posts */
+    --bg-2: #0F172A;            /* near-black navy */
+    --bg-3: #3A5A78;            /* slate */
+    --paper: #FFFFFF;           /* content surface */
+    --paper-2: #F5F7FA;         /* secondary surface */
+    --paper-3: #E5E9EF;
+    --ink: #0B1F33;             /* primary text on light */
+    --ink-2: #1F2937;
+    --ink-3: #4B5563;
+    --muted: #6B7280;
+    --muted-2: #9CA3AF;
+    --line: #E2E8F0;
+    --line-strong: #CBD5E0;
+    --accent: #2FB8C6;          /* cyan — matches posts */
+    --accent-deep: #1F8E99;
+    --on-dark: #E2E8F0;
+    --on-dark-muted: #94A3B8;
+  }
 
-    <!-- Open Graph (LinkedIn / Social Preview) -->
-    <meta property="og:title" content="Thaer M Barakat – AI Automation & Business Process Optimization" />
-    <meta property="og:description"
-        content="Practical insights on AI automation, business process optimization, and digital transformation from a senior GCC-based professional." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://thaerb68.github.io/my-blog/" />
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  body {
+    margin: 0;
+    background: linear-gradient(135deg, var(--bg-1) 0%, var(--bg-3) 100%);
+    background-attachment: fixed;
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    padding: 20px;
+    min-height: 100vh;
+  }
 
-        html {
-            scroll-behavior: smooth;
-        }
+  a { color: inherit; }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            color: #111827;
-            background: linear-gradient(135deg, #0B1F33 0%, #3A5A78 100%);
-            min-height: 100vh;
-            padding: 20px;
-        }
+  .container {
+    max-width: 1240px;
+    margin: 0 auto;
+  }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+  /* ───── Top nav ───── */
+  .top-nav {
+    background: var(--paper);
+    border-radius: 12px 12px 0 0;
+    padding: 18px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--line);
+  }
+  .brand {
+    font-weight: 700;
+    color: var(--ink);
+    font-size: 1.05em;
+    letter-spacing: -0.01em;
+  }
+  .brand .dot {
+    display: inline-block;
+    width: 8px; height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  .top-nav-links {
+    display: flex;
+    gap: 28px;
+    font-size: 0.92em;
+  }
+  .top-nav-links a {
+    color: var(--ink-3);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color .2s ease;
+  }
+  .top-nav-links a:hover { color: var(--accent); }
+  .top-nav-links a.cta {
+    color: var(--accent);
+  }
 
-        /* Header */
-        header {
-            background: linear-gradient(135deg, #0B1F33 0%, #0F172A 100%);
-            color: white;
-            padding: 60px 40px;
-            text-align: center;
-            border-radius: 16px;
-            margin-bottom: 40px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
+  /* ───── Hero (dark, like posts header) ───── */
+  header.hero {
+    background: linear-gradient(135deg, var(--bg-1) 0%, var(--bg-2) 100%);
+    color: var(--paper);
+    padding: 72px 56px 64px;
+    position: relative;
+    overflow: hidden;
+  }
+  header.hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="g" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M 24 0 L 0 0 0 24" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23g)"/></svg>');
+    opacity: 0.6;
+    pointer-events: none;
+  }
+  header.hero > * { position: relative; z-index: 1; }
 
-        .header-author {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 15px;
-        }
+  .hero-grid {
+    max-width: 980px;
+  }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 24px;
+  }
+  .eyebrow .pulse {
+    width: 7px; height: 7px;
+    background: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba(47,184,198,0.7);
+    animation: pulse 2.4s ease-out infinite;
+  }
+  @keyframes pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(47,184,198,0.6); }
+    70%  { box-shadow: 0 0 0 10px rgba(47,184,198,0); }
+    100% { box-shadow: 0 0 0 0 rgba(47,184,198,0); }
+  }
+  h1.hero-title {
+    font-size: clamp(40px, 5.6vw, 76px);
+    line-height: 1.04;
+    letter-spacing: -0.025em;
+    font-weight: 700;
+    margin: 0 0 24px;
+    color: var(--paper);
+    text-wrap: balance;
+  }
+  h1.hero-title .accent { color: var(--accent); }
+  .hero-lede {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--on-dark);
+    max-width: 640px;
+    margin: 0 0 32px;
+    text-wrap: pretty;
+  }
+  .author-block {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 0 0;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .author-block img {
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent);
+  }
+  .author-block .name {
+    font-weight: 600;
+    color: var(--paper);
+    font-size: 15px;
+    letter-spacing: -0.005em;
+  }
+  .author-block .role {
+    font-size: 13px;
+    color: var(--on-dark-muted);
+    margin-top: 2px;
+  }
 
-        .author-photo {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #2FB8C6;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        }
+  /* ───── Main paper surface ───── */
+  main.paper {
+    background: var(--paper);
+    border-radius: 0 0 12px 12px;
+    overflow: hidden;
+  }
 
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-            opacity: 0.3;
-        }
+  /* Section header strip */
+  .section-strip {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 36px 56px 24px;
+    border-bottom: 1px solid var(--line);
+  }
+  .section-strip h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.015em;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .section-strip h2::before {
+    content: '';
+    display: inline-block;
+    width: 24px; height: 2px;
+    background: var(--accent);
+  }
+  .section-strip .meta {
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
 
-        header>* {
-            position: relative;
-            z-index: 1;
-        }
+  /* ───── Featured (latest) ───── */
+  .featured {
+    padding: 36px 56px 48px;
+    border-bottom: 1px solid var(--line);
+  }
+  .featured-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  .featured-image {
+    overflow: hidden;
+    border-radius: 8px;
+    aspect-ratio: 16/10;
+    background: var(--paper-2);
+    box-shadow: 0 8px 30px rgba(11,31,51,0.18);
+  }
+  .featured-image img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .6s ease;
+  }
+  .featured:hover .featured-image img { transform: scale(1.025); }
 
-        h1 {
-            font-size: 3em;
-            font-weight: 800;
-            margin-bottom: 15px;
-            letter-spacing: -1px;
-        }
+  .featured-tag {
+    display: inline-block;
+    background: rgba(47,184,198,0.1);
+    color: var(--accent-deep);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    border-radius: 4px;
+    margin-bottom: 18px;
+  }
+  h3.featured-title {
+    font-size: clamp(26px, 3.2vw, 40px);
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin: 0 0 18px;
+    text-wrap: balance;
+  }
+  h3.featured-title a { color: inherit; text-decoration: none; transition: color .2s ease; }
+  h3.featured-title a:hover { color: var(--accent-deep); }
+  .featured-excerpt {
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--ink-3);
+    margin: 0 0 24px;
+    text-wrap: pretty;
+  }
+  .featured-meta {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 24px;
+  }
+  .featured-meta .sep {
+    width: 3px; height: 3px;
+    background: var(--line-strong);
+    border-radius: 50%;
+  }
+  .read-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--accent-deep);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 15px;
+    padding: 10px 0;
+    border-bottom: 2px solid var(--accent);
+    transition: gap .2s ease, color .2s ease;
+  }
+  .read-cta:hover { gap: 14px; color: var(--ink); }
 
-        .tagline {
-            font-size: 1.3em;
-            color: #cbd5e0;
-            font-weight: 300;
-            margin-bottom: 30px;
-        }
+  /* ───── Archive grid ───── */
+  .archive {
+    padding: 28px 56px 72px;
+  }
 
-        nav {
-            margin-top: 30px;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
+  /* Filter bar */
+  .filter-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    padding: 0 0 28px;
+    margin: 8px 0 8px;
+    border-bottom: 1px solid var(--line);
+  }
+  .filter-bar .label {
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 700;
+    margin-right: 6px;
+  }
+  .filter-chip {
+    font: inherit;
+    font-size: 13px;
+    color: var(--ink-3);
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 6px 14px;
+    cursor: pointer;
+    transition: all .18s ease;
+    letter-spacing: 0.01em;
+  }
+  .filter-chip:hover {
+    border-color: var(--accent);
+    color: var(--accent-deep);
+  }
+  .filter-chip.active {
+    background: var(--bg-1);
+    color: var(--on-dark);
+    border-color: var(--bg-1);
+  }
+  .filter-chip .count {
+    opacity: 0.55;
+    margin-left: 6px;
+    font-variant-numeric: tabular-nums;
+  }
+  .filter-chip.active .count { opacity: 0.7; }
 
-        nav a {
-            color: #2FB8C6;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            padding: 8px 16px;
-            border-radius: 6px;
-        }
+  .archive-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 28px;
+    margin-top: 32px;
+  }
+  .entry {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+  }
+  .entry::before {
+    content: '';
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 2px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .35s ease;
+    z-index: 2;
+  }
+  .entry:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    box-shadow: 0 14px 36px rgba(11,31,51,0.12);
+  }
+  .entry:hover::before { transform: scaleX(1); }
+  .entry.is-hidden { display: none; }
 
-        nav a:hover {
-            background: rgba(47, 184, 198, 0.2);
-            color: white;
-        }
+  .entry-image {
+    aspect-ratio: 16/10;
+    background: var(--paper-2);
+    overflow: hidden;
+    border-bottom: 1px solid var(--line);
+    position: relative;
+  }
+  .entry-image img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .6s cubic-bezier(.2,.6,.2,1);
+  }
+  .entry:hover .entry-image img { transform: scale(1.05); }
+  .entry-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(11,31,51,0) 55%, rgba(11,31,51,0.45) 100%);
+    opacity: 0;
+    transition: opacity .35s ease;
+  }
+  .entry:hover .entry-image::after { opacity: 1; }
 
-        /* Main Content */
-        main {
-            background: white;
-            border-radius: 16px;
-            padding: 50px 40px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            margin-bottom: 40px;
-        }
+  .entry-num {
+    position: absolute;
+    top: 12px;
+    left: 14px;
+    font-family: 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 11px;
+    color: var(--on-dark);
+    background: rgba(11,31,51,0.78);
+    backdrop-filter: blur(6px);
+    padding: 4px 9px;
+    border-radius: 4px;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    z-index: 1;
+  }
 
-        .intro {
-            text-align: center;
-            margin-bottom: 60px;
-            padding-bottom: 40px;
-            border-bottom: 2px solid #F5F7FA;
-        }
+  .entry-body {
+    padding: 22px 24px 24px;
+  }
+  .entry-meta {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+  .entry-meta .cat {
+    color: var(--accent-deep);
+    font-weight: 700;
+  }
+  .entry-meta .sep {
+    width: 3px; height: 3px;
+    background: var(--line-strong);
+    border-radius: 50%;
+  }
+  .entry h4 {
+    font-size: 19px;
+    line-height: 1.3;
+    letter-spacing: -0.012em;
+    color: var(--ink);
+    margin: 0 0 12px;
+    font-weight: 700;
+    text-wrap: balance;
+    transition: color .2s ease;
+  }
+  .entry:hover h4 { color: var(--accent-deep); }
+  .entry p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--muted);
+    margin: 0;
+    text-wrap: pretty;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .entry-foot {
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+    font-size: 12px;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    letter-spacing: 0.04em;
+  }
+  .entry-foot .read { display: inline-flex; align-items: center; gap: 6px; font-weight: 500; }
+  .entry-foot .read::before {
+    content: '';
+    display: inline-block;
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  .entry-foot .arrow {
+    color: var(--accent-deep);
+    font-size: 16px;
+    font-weight: 600;
+    transition: transform .25s ease;
+  }
+  .entry:hover .entry-foot .arrow { transform: translateX(4px); }
 
-        .intro h2 {
-            font-size: 2.2em;
-            color: #0B1F33;
-            margin-bottom: 15px;
-        }
+  /* ───── About ───── */
+  .about {
+    background: var(--paper-2);
+    border-top: 1px solid var(--line);
+    padding: 72px 56px 80px;
+  }
+  .about-head {
+    max-width: 880px;
+    margin: 0 0 48px;
+  }
+  .about-head .eyebrow-light {
+    color: var(--accent-deep);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .about-head .eyebrow-light::before {
+    content: '';
+    width: 28px; height: 2px;
+    background: var(--accent);
+  }
+  .about-head h2 {
+    font-size: clamp(28px, 3.4vw, 42px);
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.025em;
+    margin: 0 0 22px;
+    line-height: 1.15;
+    text-wrap: balance;
+  }
+  .about-head .lede {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--ink-3);
+    margin: 0;
+    text-wrap: pretty;
+    max-width: 780px;
+  }
+  .about-head .lede a {
+    color: var(--accent-deep);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent);
+  }
 
-        .intro p {
-            font-size: 1.2em;
-            color: #6B7280;
-            max-width: 700px;
-            margin: 0 auto;
-            line-height: 1.7;
-        }
+  /* Service tiles */
+  .services {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+  .service {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 26px 26px 28px;
+    position: relative;
+    transition: border-color .25s ease, transform .25s ease;
+  }
+  .service:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+  .service .num {
+    font-family: 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 11px;
+    color: var(--accent-deep);
+    letter-spacing: 0.12em;
+    font-weight: 600;
+    margin-bottom: 14px;
+    display: block;
+  }
+  .service h3 {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    margin: 0 0 10px;
+  }
+  .service p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--muted);
+    margin: 0;
+  }
 
-        /* Blog Posts Grid */
-        .posts-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
-        }
+  /* Credentials grid */
+  .credentials {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 40px;
+  }
+  .cred {
+    background: var(--paper);
+    padding: 22px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 130px;
+  }
+  .cred .k {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+  .cred .v {
+    font-size: 14px;
+    color: var(--ink-2);
+    line-height: 1.5;
+  }
+  .cred .v strong { color: var(--ink); font-weight: 600; }
 
-        .post-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            border: 2px solid #F5F7FA;
-        }
+  /* Industries strip */
+  .industries {
+    background: var(--bg-1);
+    border-radius: 10px;
+    padding: 28px 32px;
+    color: var(--on-dark);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .industries .label {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .industries .list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 12px;
+  }
+  .industries .chip {
+    font-size: 13px;
+    color: var(--on-dark);
+    padding: 6px 12px;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 4px;
+    background: rgba(255,255,255,0.03);
+    letter-spacing: 0.01em;
+  }
 
-        .post-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(47, 184, 198, 0.2);
-            border-color: #2FB8C6;
-        }
+  @media (max-width: 1024px) {
+    .services { grid-template-columns: 1fr; }
+    .credentials { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 720px) {
+    .credentials { grid-template-columns: 1fr; }
+    .industries { flex-direction: column; align-items: flex-start; }
+  }
 
-        .post-image {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            background: linear-gradient(135deg, #2FB8C6 0%, #3A5A78 100%);
-        }
+  /* ───── Footer ───── */
+  footer.foot {
+    background: var(--bg-1);
+    color: var(--on-dark-muted);
+    padding: 48px 56px;
+    border-radius: 0 0 12px 12px;
+  }
+  .foot-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .foot-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--paper);
+    letter-spacing: -0.01em;
+  }
+  .foot-tag {
+    font-size: 13px;
+    color: var(--on-dark-muted);
+    margin-top: 6px;
+  }
+  .foot-copy {
+    margin-top: 18px;
+    font-size: 12px;
+    color: #64748B;
+  }
+  .foot-links {
+    display: flex;
+    gap: 8px;
+  }
+  .foot-links a {
+    color: var(--on-dark);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 10px 18px;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 6px;
+    transition: all .2s ease;
+  }
+  .foot-links a:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--bg-1);
+  }
 
-        .post-content {
-            padding: 25px;
-        }
-
-        .post-meta {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 15px;
-            font-size: 0.85em;
-            color: #6B7280;
-        }
-
-        .post-meta span {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .post-meta span::before {
-            content: '•';
-            margin-right: 5px;
-        }
-
-        .post-meta span:first-child::before {
-            content: '📅';
-            margin-right: 0;
-        }
-
-        .post-card h3 {
-            font-size: 1.5em;
-            color: #0B1F33;
-            margin-bottom: 12px;
-            line-height: 1.3;
-        }
-
-        .post-card h3 a {
-            color: #0B1F33;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .post-card h3 a:hover {
-            color: #2FB8C6;
-        }
-
-        .post-excerpt {
-            color: #6B7280;
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-
-        .post-tags {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-            margin-bottom: 15px;
-        }
-
-        .tag {
-            background: #F5F7FA;
-            color: #3A5A78;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.85em;
-            font-weight: 500;
-        }
-
-        .read-more {
-            display: inline-block;
-            color: #2FB8C6;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .read-more:hover {
-            color: #3A5A78;
-            transform: translateX(5px);
-        }
-
-        .read-more::after {
-            content: ' →';
-        }
-
-        /* About Section */
-        #about {
-            background: linear-gradient(135deg, #F5F7FA 0%, #e5e9ef 100%);
-            padding: 50px;
-            border-radius: 12px;
-            margin-top: 60px;
-            border-left: 5px solid #2FB8C6;
-        }
-
-        #about h2 {
-            font-size: 2em;
-            color: #0B1F33;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 3px solid #2FB8C6;
-        }
-
-        #about p {
-            font-size: 1.15em;
-            color: #6B7280;
-            line-height: 1.8;
-            margin-bottom: 25px;
-        }
-
-        #about ul {
-            list-style: none;
-            padding: 0;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        #about li {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            color: #0B1F33;
-            font-size: 1.05em;
-            line-height: 1.6;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-            border-left: 3px solid #2FB8C6;
-            transition: all 0.3s ease;
-        }
-
-        #about li:hover {
-            transform: translateX(5px);
-            box-shadow: 0 4px 12px rgba(47, 184, 198, 0.15);
-        }
-
-        #about li::before {
-            content: '✓';
-            color: #2FB8C6;
-            font-weight: bold;
-            margin-right: 10px;
-            font-size: 1.2em;
-        }
-
-        /* Footer */
-        footer {
-            background: #0B1F33;
-            color: #a0aec0;
-            padding: 40px;
-            text-align: center;
-            border-radius: 16px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-        }
-
-        .footer-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .footer-content>p {
-            margin-bottom: 20px;
-            font-size: 0.95em;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-
-        .social-links a {
-            color: #2FB8C6;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            padding: 8px 16px;
-            border-radius: 6px;
-        }
-
-        .social-links a:hover {
-            background: rgba(47, 184, 198, 0.2);
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            body {
-                padding: 10px;
-            }
-
-            h1 {
-                font-size: 2em;
-            }
-
-            .tagline {
-                font-size: 1.1em;
-            }
-
-            header,
-            main,
-            footer {
-                padding: 30px 20px;
-            }
-
-            .header-author {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .author-photo {
-                width: 70px;
-                height: 70px;
-            }
-
-            .posts-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .intro h2 {
-                font-size: 1.8em;
-            }
-
-            #about {
-                padding: 30px 20px;
-            }
-
-            #about ul {
-                grid-template-columns: 1fr;
-            }
-
-            nav {
-                gap: 15px;
-            }
-        }
-    </style>
+  /* ───── Responsive ───── */
+  @media (max-width: 1024px) {
+    .archive-grid { grid-template-columns: repeat(2, 1fr); }
+    .featured-grid { grid-template-columns: 1fr; gap: 24px; }
+  }
+  @media (max-width: 720px) {
+    body { padding: 10px; }
+    header.hero { padding: 48px 28px 40px; }
+    .top-nav { padding: 14px 20px; }
+    .top-nav-links { gap: 16px; font-size: 0.85em; }
+    .section-strip, .featured, .archive, .about, footer.foot { padding-left: 24px; padding-right: 24px; }
+    .archive-grid { grid-template-columns: 1fr; gap: 24px; }
+    .credentials { grid-template-columns: 1fr; }
+    h1.hero-title { font-size: 36px; }
+    .about-grid { grid-template-columns: 1fr; gap: 24px; }
+    .foot-grid { flex-direction: column; align-items: flex-start; }
+    .foot-links { flex-wrap: wrap; }
+  }
+</style>
 </head>
 
 <body>
-    <div class="container">
-        <header>
-            <div class="header-author">
-                <img src="./images/author-thaer.webp" alt="Thaer M Barakat - Technology Professional" class="author-photo">
-                <h1>Thaer M Barakat</h1>
-            </div>
-            <p class="tagline">AI Automation • Business Process Optimization • Digital Transformation</p>
-            <nav>
-                <a href="#home">Home</a>
-                <a href="#blog">Blog</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-            </nav>
-        </header>
+<div class="container">
 
-        <main id="home">
-            <section class="intro">
-                <h2>Practical AI & Business Automation Insights</h2>
-                <p>
-                    I write about designing and implementing AI-driven automation, intelligent business processes,
-                    and enterprise-ready systems — with a focus on real-world ROI and measurable outcomes, not hype.
-                </p>
-            </section>
-
-            <section id="blog" class="posts-grid">
-                <article class="post-card">
-                    <img src="./images/agentic-ai-workspace.jpg"
-                        alt="Enterprise agentic AI systems in production" class="post-image" loading="lazy" />
-                    <div class="post-content">
-                        <div class="post-meta">
-                            <span>May 2026</span>
-                            <span>12 min read</span>
-                        </div>
-                        <h3>
-                            <a href="./posts/agentic-ai-enterprise-deployment-2026.html">Agentic AI in the Enterprise: From Pilot to Production — The 2026 Reality Check</a>
-                        </h3>
-                        <div class="post-tags">
-                            <span class="tag">Agentic AI</span>
-                            <span class="tag">Enterprise AI</span>
-                            <span class="tag">Multi-Agent Systems</span>
-                        </div>
-                        <p class="post-excerpt">
-                            The majority of agentic AI pilots are failing to reach production — and the reasons are specific, fixable, and rarely discussed. A practitioner's analysis of what's actually working in enterprise deployments in 2026, why most fail, and how to bridge the gap.
-                        </p>
-                        <a href="./posts/agentic-ai-enterprise-deployment-2026.html" class="read-more">Read full article</a>
-                    </div>
-                </article>
-                <article class="post-card">
-                    <img src="./images/quantum-computer-processor.webp"
-                        alt="Quantum computing and AI convergence at enterprise scale" class="post-image" />
-                    <div class="post-content">
-                        <div class="post-meta">
-                            <span>April 2026</span>
-                            <span>12 min read</span>
-                        </div>
-                        <h3>
-                            <a href="./posts/quantum-ai-convergence-enterprise-2026.html">Quantum-AI Convergence: The Computing Revolution at Enterprise Scale</a>
-                        </h3>
-                        <div class="post-tags">
-                            <span class="tag">Quantum Computing</span>
-                            <span class="tag">AI</span>
-                            <span class="tag">Enterprise</span>
-                        </div>
-                        <p class="post-excerpt">
-                            How quantum computing and AI are merging to solve previously impossible problems. IBM's 2026 quantum advantage milestone, hybrid systems, and practical enterprise applications.
-                        </p>
-                        <a href="./posts/quantum-ai-convergence-enterprise-2026.html" class="read-more">Read full article</a>
-                    </div>
-                </article>
-                <article class="post-card">
-                    <img src="./images/multimodal-ai-unified-processing.webp"
-                        alt="Multimodal AI processing text, images, audio, and video" class="post-image" />
-                    <div class="post-content">
-                        <div class="post-meta">
-                            <span>March 2026</span>
-                            <span>10 min read</span>
-                        </div>
-                        <h3>
-                            <a href="./posts/multimodal-ai-enterprise-transformation-2026.html">Multimodal AI Reasoning: When AI Understands More Than Just Text</a>
-                        </h3>
-                        <div class="post-tags">
-                            <span class="tag">Multimodal AI</span>
-                            <span class="tag">Enterprise AI</span>
-                            <span class="tag">Implementation</span>
-                        </div>
-                        <p class="post-excerpt">
-                            Enterprise AI evolving from single-input systems to unified reasoning across text, images, audio, and video. Real use cases and implementation strategies for 2026.
-                        </p>
-                        <a href="./posts/multimodal-ai-enterprise-transformation-2026.html" class="read-more">Read full article</a>
-                    </div>
-                </article>
-                <article class="post-card">
-                    <img src="./images/protein-structure-prediction.webp"
-                        alt="AI-powered scientific discovery in drug development and research" class="post-image" />
-                    <div class="post-content">
-                        <div class="post-meta">
-                            <span>February 2026</span>
-                            <span>11 min read</span>
-                        </div>
-                        <h3>
-                            <a href="./posts/ai-scientific-discovery-breakthroughs-2026.html">AI-Powered Scientific Discovery: From Lab to Breakthrough</a>
-                        </h3>
-                        <div class="post-tags">
-                            <span class="tag">Scientific AI</span>
-                            <span class="tag">Drug Discovery</span>
-                            <span class="tag">AlphaFold</span>
-                        </div>
-                        <p class="post-excerpt">
-                            How AI is accelerating drug discovery, materials science, and fundamental research. AlphaFold breakthroughs, clinical trials, and the 2026 inflection point.
-                        </p>
-                        <a href="./posts/ai-scientific-discovery-breakthroughs-2026.html" class="read-more">Read full article</a>
-                    </div>
-                </article>
-                <article class="post-card">
-                    <img src="./images/ai-automation-2026-trends.webp"
-                        alt="AI and automation trends shaping 2026 technology landscape" class="post-image" />
-                    <div class="post-content">
-                        <div class="post-meta">
-                            <span>January 2026</span>
-                            <span>10 min read</span>
-                        </div>
-                        <h3>
-                            <a href="./posts/ai-automation-trends-2026.html">AI & Automation in 2026: The Trends Shaping
-                                Technology, Work, and Society</a>
-                        </h3>
-                        <div class="post-tags">
-                            <span class="tag">AI Trends</span>
-                            <span class="tag">Automation</span>
-                            <span class="tag">Future of Work</span>
-                        </div>
-                        <p class="post-excerpt">
-                            A clear-eyed analysis of where AI and automation stand in 2026. From agentic AI to
-                            enterprise hyperautomation, governance challenges to workforce transformation—the trends
-                            that truly matter.
-                        </p>
-                        <a href="./posts/ai-automation-trends-2026.html" class="read-more">Read full article</a>
-                    </div>
-                </article>
-                <article class="post-card">
-                    <img src="./images/collaborative-intelligence.png"
-                        alt="Multi-agent AI collaboration in software development" class="post-image" />
-                    <div class="post-content">
-                        <div class="post-meta">
-                            <span>December 2025</span>
-                            <span>12 min read</span>
-                        </div>
-                        <h3>
-                            <a href="./posts/agent-orchestrated-dev-cycles.html">Agent-Orchestrated Development
-                                Cycles</a>
-                        </h3>
-                        <div class="post-tags">
-                            <span class="tag">AI Automation</span>
-                            <span class="tag">Multi-Agent Systems</span>
-                            <span class="tag">Development Workflows</span>
-                        </div>
-                        <p class="post-excerpt">
-                            How multi-agent AI workflows are reshaping modern software delivery. A structured look at
-                            agent collaboration across planning, development, testing, and delivery.
-                        </p>
-                        <a href="./posts/agent-orchestrated-dev-cycles.html" class="read-more">Read full article</a>
-                    </div>
-                </article>
-                <article class="post-card">
-                    <img src="./images/Graph-based execution.png" alt="AI integration and connectivity through MCP"
-                        class="post-image" />
-                    <div class="post-content">
-                        <div class="post-meta">
-                            <span>November 2025</span>
-                            <span>10 min read</span>
-                        </div>
-                        <h3>
-                            <a href="./posts/ai-integration-revolution-mcp.html">The AI Integration Revolution is Here:
-                                Meet MCP</a>
-                        </h3>
-                        <div class="post-tags">
-                            <span class="tag">AI Integration</span>
-                            <span class="tag">MCP</span>
-                            <span class="tag">Standards</span>
-                        </div>
-                        <p class="post-excerpt">
-                            How the Model Context Protocol is transforming AI assistant integration. A universal
-                            standard for connecting AI to data sources and tools—like USB-C for AI.
-                        </p>
-                        <a href="./posts/ai-integration-revolution-mcp.html" class="read-more">Read full article</a>
-                    </div>
-                </article>
-
-                <article class="post-card">
-                    <img src="./images/ai-automation-enterprise.webp"
-                        alt="AI automation transforming enterprise business processes" class="post-image" />
-                    <div class="post-content">
-                        <div class="post-meta">
-                            <span>October 2025</span>
-                            <span>7 min read</span>
-                        </div>
-                        <h3>
-                            <a href="./posts/ai-automation-enterprise-trends.html">AI Automation in the Enterprise: 2025
-                                Trends That Matter</a>
-                        </h3>
-                        <div class="post-tags">
-                            <span class="tag">AI Automation</span>
-                            <span class="tag">Enterprise</span>
-                            <span class="tag">Business Process</span>
-                        </div>
-                        <p class="post-excerpt">
-                            How organizations are moving beyond the hype to implement practical AI automation that
-                            delivers measurable business value. From intelligent RPA to AI agents in production.
-                        </p>
-                        <a href="./posts/ai-automation-enterprise-trends.html" class="read-more">Read full article</a>
-                    </div>
-                </article>
-
-                <article class="post-card">
-                    <img src="./images/sme-process-automation.webp"
-                        alt="Business process automation in small and medium enterprises" class="post-image" />
-                    <div class="post-content">
-                        <div class="post-meta">
-                            <span>September 2025</span>
-                            <span>9 min read</span>
-                        </div>
-                        <h3>
-                            <a href="./posts/business-process-automation-sme-guide.html">Business Process Automation for
-                                SMEs: A Practitioner's Guide</a>
-                        </h3>
-                        <div class="post-tags">
-                            <span class="tag">Business Process Automation</span>
-                            <span class="tag">SME</span>
-                            <span class="tag">Implementation</span>
-                        </div>
-                        <p class="post-excerpt">
-                            Real-world lessons from analyzing, designing, and implementing automation in small and
-                            medium
-                            enterprises. A systematic approach to identifying opportunities and delivering measurable
-                            ROI.
-                        </p>
-                        <a href="./posts/business-process-automation-sme-guide.html" class="read-more">Read full
-                            article</a>
-                    </div>
-                </article>
-
-                <article class="post-card">
-                    <img src="./images/workflow-roi-metrics.webp" alt="Measuring the true ROI of workflow automation"
-                        class="post-image" />
-                    <div class="post-content">
-                        <div class="post-meta">
-                            <span>August 2025</span>
-                            <span>8 min read</span>
-                        </div>
-                        <h3>
-                            <a href="./posts/hidden-roi-workflow-automation.html">The Hidden ROI of Workflow Automation:
-                                Measuring What Actually Matters</a>
-                        </h3>
-                        <div class="post-tags">
-                            <span class="tag">Workflow Automation</span>
-                            <span class="tag">ROI</span>
-                            <span class="tag">Metrics</span>
-                        </div>
-                        <p class="post-excerpt">
-                            Moving beyond time-saved metrics to capture the real business value of automation across
-                            efficiency, quality, employee experience, customer impact, and strategic enablement.
-                        </p>
-                        <a href="./posts/hidden-roi-workflow-automation.html" class="read-more">Read full article</a>
-                    </div>
-                </article>
-
-                <article class="post-card">
-                    <img src="./images/conversational-ai-business.webp"
-                        alt="Conversational AI transforming business interactions" class="post-image" />
-                    <div class="post-content">
-                        <div class="post-meta">
-                            <span>July 2025</span>
-                            <span>9 min read</span>
-                        </div>
-                        <h3>
-                            <a href="./posts/conversational-ai-beyond-chatbots.html">Conversational AI in Business:
-                                Beyond
-                                the Chatbot Hype</a>
-                        </h3>
-                        <div class="post-tags">
-                            <span class="tag">Conversational AI</span>
-                            <span class="tag">Customer Service</span>
-                            <span class="tag">LLMs</span>
-                        </div>
-                        <p class="post-excerpt">
-                            Moving from frustrating bot experiences to AI conversations that actually solve business
-                            problems. Context management, action capability, and intelligent routing at scale.
-                        </p>
-                        <a href="./posts/conversational-ai-beyond-chatbots.html" class="read-more">Read full article</a>
-                    </div>
-                </article>
-
-                <article class="post-card">
-                    <img src="./images/low-code-platforms.webp" alt="Low-code platforms empowering citizen developers"
-                        class="post-image" />
-                    <div class="post-content">
-                        <div class="post-meta">
-                            <span>June 2025</span>
-                            <span>8 min read</span>
-                        </div>
-                        <h3>
-                            <a href="./posts/low-code-automation-platforms.html">Low-Code Automation Platforms:
-                                Empowering
-                                Citizen Developers</a>
-                        </h3>
-                        <div class="post-tags">
-                            <span class="tag">Low-Code</span>
-                            <span class="tag">Citizen Developers</span>
-                            <span class="tag">Platforms</span>
-                        </div>
-                        <p class="post-excerpt">
-                            How low-code tools democratize automation while maintaining governance and scalability.
-                            Building
-                            citizen developer programs that deliver value without creating chaos.
-                        </p>
-                        <a href="./posts/low-code-automation-platforms.html" class="read-more">Read full article</a>
-                    </div>
-                </article>
-
-                <article class="post-card">
-                    <img src="./images/document-processing-ai.webp"
-                        alt="Intelligent document processing with AI understanding" class="post-image" />
-                    <div class="post-content">
-                        <div class="post-meta">
-                            <span>May 2025</span>
-                            <span>8 min read</span>
-                        </div>
-                        <h3>
-                            <a href="./posts/intelligent-document-processing.html">Intelligent Document Processing: From
-                                OCR
-                                to Understanding</a>
-                        </h3>
-                        <div class="post-tags">
-                            <span class="tag">Document Processing</span>
-                            <span class="tag">IDP</span>
-                            <span class="tag">AI</span>
-                        </div>
-                        <p class="post-excerpt">
-                            How AI transforms document processing from data extraction to genuine comprehension.
-                            Real-world
-                            applications in invoices, contracts, claims, and customer onboarding.
-                        </p>
-                        <a href="./posts/intelligent-document-processing.html" class="read-more">Read full article</a>
-                    </div>
-                </article>
-
-                <article class="post-card">
-                    <img src="./images/api-integration-architecture.webp"
-                        alt="API integration and iPaaS architecture foundations" class="post-image" />
-                    <div class="post-content">
-                        <div class="post-meta">
-                            <span>April 2025</span>
-                            <span>9 min read</span>
-                        </div>
-                        <h3>
-                            <a href="./posts/api-integration-ipaas-foundation.html">API Integration and iPaaS: The
-                                Foundation
-                                of Modern Automation</a>
-                        </h3>
-                        <div class="post-tags">
-                            <span class="tag">API Integration</span>
-                            <span class="tag">iPaaS</span>
-                            <span class="tag">Architecture</span>
-                        </div>
-                        <p class="post-excerpt">
-                            Building scalable integration strategies that connect systems, enable automation, and
-                            support
-                            business agility. From point-to-point chaos to API-first architecture.
-                        </p>
-                        <a href="./posts/api-integration-ipaas-foundation.html" class="read-more">Read full article</a>
-                    </div>
-                </article>
-
-            </section>
-
-            <section id="about">
-                <h2>About Me</h2>
-                <p>
-                    I am a senior technology professional with experience across AI automation, process optimization,
-                    and
-                    digital transformation initiatives. My work focuses on building practical systems that improve
-                    efficiency, reduce costs, and drive measurable business outcomes in real organizations.
-                </p>
-                <ul>
-                    <li>20+ years across IT, business automation, and digital transformation</li>
-                    <li>Experience across GCC markets (UAE and region)</li>
-                    <li>Background in engineering, process optimization, and enterprise systems</li>
-                    <li>Focus areas: AI automation, workflow orchestration, intelligent process automation</li>
-                    <li>Expertise in translating business requirements into automated solutions</li>
-                    <li>Track record of implementing AI-driven systems that deliver ROI</li>
-                </ul>
-            </section>
-        </main>
-
-        <footer id="contact">
-            <div class="footer-content">
-                <p>&copy; 2026 Thaer M Barakat. All rights reserved.</p>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/thaerb68/" target="_blank"
-                        rel="noopener noreferrer">LinkedIn</a>
-                    <a href="https://github.com/thaerb68" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a href="mailto:thaerb68@gmail.com">Email</a>
-                </div>
-            </div>
-        </footer>
+  <!-- Top nav -->
+  <nav class="top-nav">
+    <div class="brand"><span class="dot"></span>Thaer M Barakat</div>
+    <div class="top-nav-links">
+      <a href="#latest">Latest</a>
+      <a href="#archive">Archive</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="cta">Contact →</a>
     </div>
-</body>
+  </nav>
 
+  <!-- Hero -->
+  <header class="hero" id="home">
+    <div class="hero-grid">
+      <div class="eyebrow"><span class="pulse"></span>Updated May 2026</div>
+      <h1 class="hero-title">
+        AI automation, business&nbsp;process,<br />
+        and the <span class="accent">enterprise systems</span><br />
+        that quietly run modern&nbsp;operations.
+      </h1>
+      <p class="hero-lede">
+        A working professional's notes on what actually ships in production —
+        drawn from two decades designing automation, intelligent process,
+        and digital transformation programs across the UK and GCC.
+      </p>
+      <div class="author-block">
+        <img src="./images/author-thaer.webp" alt="Thaer M Barakat" />
+        <div>
+          <div class="name">Thaer M Barakat</div>
+          <div class="role">Founder, <a href="https://theflowminds.com" target="_blank" rel="noopener noreferrer" style="color:var(--accent);text-decoration:none;font-weight:600">TheFlowMinds</a> · AI-powered automation</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="paper">
+
+    <!-- Latest -->
+    <div class="section-strip" id="latest">
+      <h2>Latest Essay</h2>
+      <span class="meta">May 2026 · Featured</span>
+    </div>
+
+    <section class="featured">
+      <div class="featured-grid">
+        <a href="./posts/agentic-ai-enterprise-deployment-2026.html" class="featured-image">
+          <img src="./images/agentic-ai-workspace.jpg" alt="Enterprise agentic AI systems in production" loading="lazy" />
+        </a>
+        <div>
+          <span class="featured-tag">Agentic AI · Enterprise</span>
+          <h3 class="featured-title">
+            <a href="./posts/agentic-ai-enterprise-deployment-2026.html">
+              Agentic AI in the Enterprise: From Pilot to Production — The 2026 Reality Check
+            </a>
+          </h3>
+          <p class="featured-excerpt">
+            The majority of agentic AI pilots are failing to reach production —
+            and the reasons are specific, fixable, and rarely discussed. A
+            practitioner's analysis of what's working in 2026, why most fail,
+            and how to bridge the gap.
+          </p>
+          <div class="featured-meta">
+            <span>May 2026</span>
+            <span class="sep"></span>
+            <span>12 min read</span>
+            <span class="sep"></span>
+            <span>Multi-Agent Systems</span>
+          </div>
+          <a href="./posts/agentic-ai-enterprise-deployment-2026.html" class="read-cta">
+            Read full essay <span>→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Archive -->
+    <div class="section-strip">
+      <h2 id="archive">The Archive</h2>
+      <span class="meta">13 entries · 2025–26</span>
+    </div>
+
+    <section class="archive">
+      <div class="archive-grid" id="archive-grid">
+
+        <a href="./posts/quantum-ai-convergence-enterprise-2026.html" class="entry" data-cat="frontier">
+          <div class="entry-image"><img src="./images/quantum-computer-processor.webp" alt="" loading="lazy" /></div>
+          <div class="entry-body">
+            <div class="entry-meta"><span class="cat">Quantum + AI</span><span class="sep"></span><span>Apr 2026</span></div>
+            <h4>Quantum-AI Convergence: The Computing Revolution at Enterprise Scale</h4>
+            <p>How quantum computing and AI are merging to solve previously impossible problems. IBM's 2026 quantum advantage milestone and practical enterprise applications.</p>
+            <div class="entry-foot"><span class="read">12 min read</span><span class="arrow">Read →</span></div>
+          </div>
+        </a>
+
+        <a href="./posts/multimodal-ai-enterprise-transformation-2026.html" class="entry" data-cat="frontier">
+          <div class="entry-image"><img src="./images/multimodal-ai-unified-processing.webp" alt="" loading="lazy" /></div>
+          <div class="entry-body">
+            <div class="entry-meta"><span class="cat">Multimodal AI</span><span class="sep"></span><span>Mar 2026</span></div>
+            <h4>Multimodal AI Reasoning: When AI Understands More Than Just Text</h4>
+            <p>Enterprise AI evolving from single-input systems to unified reasoning across text, images, audio, and video. Real use cases for 2026.</p>
+            <div class="entry-foot"><span class="read">10 min read</span><span class="arrow">Read →</span></div>
+          </div>
+        </a>
+
+        <a href="./posts/ai-scientific-discovery-breakthroughs-2026.html" class="entry" data-cat="frontier">
+          <div class="entry-image"><img src="./images/protein-structure-prediction.webp" alt="" loading="lazy" /></div>
+          <div class="entry-body">
+            <div class="entry-meta"><span class="cat">Scientific AI</span><span class="sep"></span><span>Feb 2026</span></div>
+            <h4>AI-Powered Scientific Discovery: From Lab to Breakthrough</h4>
+            <p>How AI is accelerating drug discovery, materials science, and fundamental research. AlphaFold breakthroughs and the 2026 inflection point.</p>
+            <div class="entry-foot"><span class="read">11 min read</span><span class="arrow">Read →</span></div>
+          </div>
+        </a>
+
+        <a href="./posts/ai-automation-trends-2026.html" class="entry" data-cat="automation">
+          <div class="entry-image"><img src="./images/ai-automation-2026-trends.webp" alt="" loading="lazy" /></div>
+          <div class="entry-body">
+            <div class="entry-meta"><span class="cat">AI Trends</span><span class="sep"></span><span>Jan 2026</span></div>
+            <h4>AI &amp; Automation in 2026: The Trends Shaping Technology and Work</h4>
+            <p>A clear-eyed analysis of where AI and automation stand. From agentic AI to enterprise hyperautomation and workforce transformation.</p>
+            <div class="entry-foot"><span class="read">10 min read</span><span class="arrow">Read →</span></div>
+          </div>
+        </a>
+
+        <a href="./posts/agent-orchestrated-dev-cycles.html" class="entry" data-cat="agentic">
+          <div class="entry-image"><img src="./images/collaborative-intelligence.png" alt="" loading="lazy" /></div>
+          <div class="entry-body">
+            <div class="entry-meta"><span class="cat">Multi-Agent</span><span class="sep"></span><span>Dec 2025</span></div>
+            <h4>Agent-Orchestrated Development Cycles</h4>
+            <p>How multi-agent AI workflows are reshaping modern software delivery. Agent collaboration across planning, development, testing, and delivery.</p>
+            <div class="entry-foot"><span class="read">12 min read</span><span class="arrow">Read →</span></div>
+          </div>
+        </a>
+
+        <a href="./posts/ai-integration-revolution-mcp.html" class="entry" data-cat="integration">
+          <div class="entry-image"><img src="./images/Graph-based execution.png" alt="" loading="lazy" /></div>
+          <div class="entry-body">
+            <div class="entry-meta"><span class="cat">AI Integration</span><span class="sep"></span><span>Nov 2025</span></div>
+            <h4>The AI Integration Revolution is Here: Meet MCP</h4>
+            <p>How the Model Context Protocol is transforming AI assistant integration — a universal standard for connecting AI to data sources and tools.</p>
+            <div class="entry-foot"><span class="read">10 min read</span><span class="arrow">Read →</span></div>
+          </div>
+        </a>
+
+        <a href="./posts/ai-automation-enterprise-trends.html" class="entry" data-cat="automation">
+          <div class="entry-image"><img src="./images/ai-automation-enterprise.webp" alt="" loading="lazy" /></div>
+          <div class="entry-body">
+            <div class="entry-meta"><span class="cat">AI Automation</span><span class="sep"></span><span>Oct 2025</span></div>
+            <h4>AI Automation in the Enterprise: 2025 Trends That Matter</h4>
+            <p>How organizations are moving beyond hype to implement practical AI automation that delivers measurable business value. From RPA to AI agents in production.</p>
+            <div class="entry-foot"><span class="read">7 min read</span><span class="arrow">Read →</span></div>
+          </div>
+        </a>
+
+        <a href="./posts/business-process-automation-sme-guide.html" class="entry" data-cat="business">
+          <div class="entry-image"><img src="./images/sme-process-automation.webp" alt="" loading="lazy" /></div>
+          <div class="entry-body">
+            <div class="entry-meta"><span class="cat">BPA · SME</span><span class="sep"></span><span>Sep 2025</span></div>
+            <h4>Business Process Automation for SMEs: A Practitioner's Guide</h4>
+            <p>Real-world lessons from designing automation in small and medium enterprises. A systematic approach to identifying opportunities and delivering ROI.</p>
+            <div class="entry-foot"><span class="read">9 min read</span><span class="arrow">Read →</span></div>
+          </div>
+        </a>
+
+        <a href="./posts/hidden-roi-workflow-automation.html" class="entry" data-cat="business">
+          <div class="entry-image"><img src="./images/workflow-roi-metrics.webp" alt="" loading="lazy" /></div>
+          <div class="entry-body">
+            <div class="entry-meta"><span class="cat">Workflow · ROI</span><span class="sep"></span><span>Aug 2025</span></div>
+            <h4>The Hidden ROI of Workflow Automation: Measuring What Actually Matters</h4>
+            <p>Beyond time-saved metrics. Capturing the real business value of automation across efficiency, quality, employee experience, and strategic enablement.</p>
+            <div class="entry-foot"><span class="read">8 min read</span><span class="arrow">Read →</span></div>
+          </div>
+        </a>
+
+        <a href="./posts/conversational-ai-beyond-chatbots.html" class="entry" data-cat="automation">
+          <div class="entry-image"><img src="./images/conversational-ai-business.webp" alt="" loading="lazy" /></div>
+          <div class="entry-body">
+            <div class="entry-meta"><span class="cat">Conversational AI</span><span class="sep"></span><span>Jul 2025</span></div>
+            <h4>Conversational AI in Business: Beyond the Chatbot Hype</h4>
+            <p>From frustrating bots to AI conversations that actually solve business problems. Context management, action capability, and intelligent routing at scale.</p>
+            <div class="entry-foot"><span class="read">9 min read</span><span class="arrow">Read →</span></div>
+          </div>
+        </a>
+
+        <a href="./posts/low-code-automation-platforms.html" class="entry" data-cat="integration">
+          <div class="entry-image"><img src="./images/low-code-platforms.webp" alt="" loading="lazy" /></div>
+          <div class="entry-body">
+            <div class="entry-meta"><span class="cat">Low-Code</span><span class="sep"></span><span>Jun 2025</span></div>
+            <h4>Low-Code Automation Platforms: Empowering Citizen Developers</h4>
+            <p>How low-code tools democratize automation while maintaining governance and scalability. Building citizen developer programs that deliver value.</p>
+            <div class="entry-foot"><span class="read">8 min read</span><span class="arrow">Read →</span></div>
+          </div>
+        </a>
+
+        <a href="./posts/intelligent-document-processing.html" class="entry" data-cat="automation">
+          <div class="entry-image"><img src="./images/document-processing-ai.webp" alt="" loading="lazy" /></div>
+          <div class="entry-body">
+            <div class="entry-meta"><span class="cat">IDP</span><span class="sep"></span><span>May 2025</span></div>
+            <h4>Intelligent Document Processing: From OCR to Understanding</h4>
+            <p>How AI transforms document processing from data extraction to genuine comprehension. Applications in invoices, contracts, claims, and onboarding.</p>
+            <div class="entry-foot"><span class="read">8 min read</span><span class="arrow">Read →</span></div>
+          </div>
+        </a>
+
+        <a href="./posts/api-integration-ipaas-foundation.html" class="entry" data-cat="integration">
+          <div class="entry-image"><img src="./images/api-integration-architecture.webp" alt="" loading="lazy" /></div>
+          <div class="entry-body">
+            <div class="entry-meta"><span class="cat">API · iPaaS</span><span class="sep"></span><span>Apr 2025</span></div>
+            <h4>API Integration and iPaaS: The Foundation of Modern Automation</h4>
+            <p>Building scalable integration strategies that connect systems, enable automation, and support business agility. From point-to-point chaos to API-first.</p>
+            <div class="entry-foot"><span class="read">9 min read</span><span class="arrow">Read →</span></div>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+
+      <div class="about-head">
+        <div class="eyebrow-light">About</div>
+        <h2>I design AI-driven automation that actually ships — and keeps running once the consultants leave.</h2>
+        <p class="lede">
+          I'm an independent consultant on AI and enterprise automation, and the founder of
+          <a href="https://theflowminds.com" target="_blank" rel="noopener noreferrer">TheFlowMinds</a>.
+          I help organizations cut through AI hype and build systems that eliminate repetitive work,
+          reduce human error, and free teams to focus on what actually grows the business —
+          architected for governance, observability, and the unglamorous reality of production.
+        </p>
+      </div>
+
+      <!-- What I work on -->
+      <div class="services">
+        <div class="service">
+          <span class="num">01 / Strategy</span>
+          <h3>AI &amp; Automation Advisory</h3>
+          <p>Opportunity assessment, target operating models, and pragmatic roadmaps that translate executive ambition into a sequence of fundable, deliverable wins.</p>
+        </div>
+        <div class="service">
+          <span class="num">02 / Build</span>
+          <h3>Intelligent Process Design</h3>
+          <p>End-to-end design of agentic and rule-based workflows — orchestration, integration, document understanding, and the human-in-the-loop controls that make them safe.</p>
+        </div>
+        <div class="service">
+          <span class="num">03 / Run</span>
+          <h3>Production &amp; Governance</h3>
+          <p>Moving pilots into production with real SLAs, monitoring, audit trails, and the operating discipline that separates a working system from an expensive demo.</p>
+        </div>
+      </div>
+
+      <!-- Credentials -->
+      <div class="credentials">
+        <div class="cred">
+          <div class="k">Experience</div>
+          <div class="v"><strong>20+ years</strong> across IT, automation, and digital transformation</div>
+        </div>
+        <div class="cred">
+          <div class="k">Discipline</div>
+          <div class="v">Engineering background, process &amp; enterprise systems specialism</div>
+        </div>
+        <div class="cred">
+          <div class="k">Stack</div>
+          <div class="v">Agentic AI · iPaaS · RPA · Low-code · IDP · MCP-era integration</div>
+        </div>
+        <div class="cred">
+          <div class="k">Approach</div>
+          <div class="v">Outcome-led, governance-aware, vendor-agnostic by default</div>
+        </div>
+      </div>
+
+      <!-- Industries -->
+      <div class="industries">
+        <span class="label">Industries Served</span>
+        <div class="list">
+          <span class="chip">Banking &amp; Financial Services</span>
+          <span class="chip">Insurance</span>
+          <span class="chip">Telecom</span>
+          <span class="chip">Government &amp; Public Sector</span>
+          <span class="chip">Energy &amp; Utilities</span>
+          <span class="chip">Logistics</span>
+          <span class="chip">Professional Services</span>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="foot" id="contact">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-name">Thaer M Barakat</div>
+        <div class="foot-tag">AI Automation · Business Process · Enterprise Systems</div>
+        <div class="foot-copy">© 2026 Thaer M Barakat. All rights reserved.</div>
+      </div>
+      <div class="foot-links">
+        <a href="https://www.linkedin.com/in/thaerb68/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/thaerb68" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="/cdn-cgi/l/email-protection#24504c45415646121c644349454d480a474b49">Email</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
 </html>
