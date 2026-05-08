@@ -121,32 +121,30 @@
                 behaviour. The execution loop looks like this:
             </p>
 
-            <div class="code-block">
-                # Conceptual Agentic Execution Loop
+            <div class="code-block"># Conceptual Agentic Execution Loop
 
-                Perceive:
-                → Ingest available context (documents, API state, prior outputs)
-                → Identify current state relative to goal
+Perceive:
+→ Ingest available context (documents, API state, prior outputs)
+→ Identify current state relative to goal
 
-                Plan:
-                → Decompose goal into achievable sub-tasks
-                → Select appropriate tools or sub-agents for each step
-                → Assess risk and escalation conditions
+Plan:
+→ Decompose goal into achievable sub-tasks
+→ Select appropriate tools or sub-agents for each step
+→ Assess risk and escalation conditions
 
-                Act:
-                → Execute tool calls (search, write, API calls, send messages)
-                → Invoke specialist sub-agents as needed
-                → Record all actions taken with timestamps
+Act:
+→ Execute tool calls (search, write, API calls, send messages)
+→ Invoke specialist sub-agents as needed
+→ Record all actions taken with timestamps
 
-                Reflect:
-                → Evaluate output against expected result
-                → Identify errors, ambiguities, or missing information
-                → Decide: continue, retry, escalate, or halt
+Reflect:
+→ Evaluate output against expected result
+→ Identify errors, ambiguities, or missing information
+→ Decide: continue, retry, escalate, or halt
 
-                Iterate:
-                → Update working state
-                → Loop until goal is achieved or exit condition met
-            </div>
+Iterate:
+→ Update working state
+→ Loop until goal is achieved or exit condition met</div>
 
             <p>
                 This loop is what separates genuine agentic AI from sophisticated automation. And it is this loop —
@@ -356,34 +354,32 @@
                 model invocations and recoverable from partial failures.
             </p>
 
-            <div class="code-block">
-                # Multi-Agent Orchestration Pattern — Enterprise Contract Review
+            <div class="code-block"># Multi-Agent Orchestration Pattern — Enterprise Contract Review
 
-                Planner Agent:
-                → Receive: contract document + review criteria
-                → Decompose: route to specialist agents by clause type
+Planner Agent:
+→ Receive: contract document + review criteria
+→ Decompose: route to specialist agents by clause type
 
-                Executor Agents (parallel):
-                → Liability Clause Agent → extracts, flags deviations
-                → Payment Terms Agent → checks against standard positions
-                → Termination Rights Agent → identifies unusual provisions
-                → Data Protection Agent → assesses GDPR/PDPL compliance
+Executor Agents (parallel):
+→ Liability Clause Agent → extracts, flags deviations
+→ Payment Terms Agent → checks against standard positions
+→ Termination Rights Agent → identifies unusual provisions
+→ Data Protection Agent → assesses GDPR/PDPL compliance
 
-                Critic Agent:
-                → Reviews each executor output
-                → Flags low-confidence extractions for human review
-                → Rejects outputs that fail quality threshold → retry
+Critic Agent:
+→ Reviews each executor output
+→ Flags low-confidence extractions for human review
+→ Rejects outputs that fail quality threshold → retry
 
-                State Manager:
-                → Persists intermediate results to external store
-                → Maintains audit trail of all agent actions
-                → Enables recovery if any step fails mid-workflow
+State Manager:
+→ Persists intermediate results to external store
+→ Maintains audit trail of all agent actions
+→ Enables recovery if any step fails mid-workflow
 
-                Summarisation Agent:
-                → Receives validated outputs from all executor agents
-                → Generates structured review summary for human lawyer
-                → Attaches confidence scores and escalation flags
-            </div>
+Summarisation Agent:
+→ Receives validated outputs from all executor agents
+→ Generates structured review summary for human lawyer
+→ Attaches confidence scores and escalation flags</div>
 
             <p>
                 Emerging orchestration frameworks — including LangGraph, CrewAI, and Anthropic's agent tooling — are
