@@ -350,19 +350,17 @@
                 self-correcting system where failures automatically trigger fixes.
             </p>
 
-            <div class="code-block">
-                while not all_tests_pass():
-                implementation = implementation_agent.generate(specification)
-                test_results = qa_agent.validate(implementation, specification)
+            <div class="code-block">while not all_tests_pass():
+implementation = implementation_agent.generate(specification)
+test_results = qa_agent.validate(implementation, specification)
 
-                if test_results.has_failures():
-                feedback = qa_agent.generate_feedback(test_results)
-                specification = specification.add_constraints(feedback)
-                else:
-                break
+if test_results.has_failures():
+feedback = qa_agent.generate_feedback(test_results)
+specification = specification.add_constraints(feedback)
+else:
+break
 
-                return implementation
-            </div>
+return implementation</div>
 
             <blockquote>
                 Small, well-defined agent loops outperform large, uncontrolled agent swarms.

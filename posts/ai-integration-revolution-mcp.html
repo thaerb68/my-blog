@@ -195,19 +195,17 @@
                 anything about PostgreSQL. It just speaks MCP. The MCP server handles all database-specific logic.
             </p>
 
-            <div class="code-block">
-                # Install MCP server
-                npm install @modelcontextprotocol/server-postgres
+            <div class="code-block"># Install MCP server
+npm install @modelcontextprotocol/server-postgres
 
-                # Configure and start
-                mcp-server-postgres --connection-string "postgresql://..."
+# Configure and start
+mcp-server-postgres --connection-string "postgresql://..."
 
-                # AI assistant automatically discovers:
-                # - Available tables
-                # - Table schemas
-                # - Query capabilities
-                # - No custom code required
-            </div>
+# AI assistant automatically discovers:
+# - Available tables
+# - Table schemas
+# - Query capabilities
+# - No custom code required</div>
 
             <hr />
 
@@ -471,20 +469,18 @@
                 Start with the filesystem server—it's simple and immediately useful:
             </p>
 
-            <div class="code-block">
-                # Install the MCP filesystem server
-                npm install -g @modelcontextprotocol/server-filesystem
+            <div class="code-block"># Install the MCP filesystem server
+npm install -g @modelcontextprotocol/server-filesystem
 
-                # Configure in your MCP client settings
-                {
-                "mcpServers": {
-                "filesystem": {
-                "command": "mcp-server-filesystem",
-                "args": ["/path/to/your/documents"]
-                }
-                }
-                }
-            </div>
+# Configure in your MCP client settings
+{
+"mcpServers": {
+"filesystem": {
+"command": "mcp-server-filesystem",
+"args": ["/path/to/your/documents"]
+}
+}
+}</div>
 
             <h4>Step 3: Test the Integration</h4>
 
@@ -538,36 +534,34 @@
 
             <h4>Basic MCP Server Structure (TypeScript)</h4>
 
-            <div class="code-block">
-                import { Server } from "@modelcontextprotocol/sdk/server/index.js";
-                import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+            <div class="code-block">import { Server } from "@modelcontextprotocol/sdk/server/index.js";
+import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 
-                // Create server instance
-                const server = new Server(
-                {
-                name: "my-custom-server",
-                version: "1.0.0",
-                },
-                {
-                capabilities: {
-                resources: {},
-                tools: {},
-                },
-                }
-                );
+// Create server instance
+const server = new Server(
+{
+name: "my-custom-server",
+version: "1.0.0",
+},
+{
+capabilities: {
+resources: {},
+tools: {},
+},
+}
+);
 
-                // Define a tool
-                server.setRequestHandler("tools/call", async (request) => {
-                if (request.params.name === "get_data") {
-                const data = await fetchDataFromYourSystem();
-                return { content: [{ type: "text", text: JSON.stringify(data) }] };
-                }
-                });
+// Define a tool
+server.setRequestHandler("tools/call", async (request) => {
+if (request.params.name === "get_data") {
+const data = await fetchDataFromYourSystem();
+return { content: [{ type: "text", text: JSON.stringify(data) }] };
+}
+});
 
-                // Start server
-                const transport = new StdioServerTransport();
-                await server.connect(transport);
-            </div>
+// Start server
+const transport = new StdioServerTransport();
+await server.connect(transport);</div>
 
             <p>
                 This basic pattern can be extended to connect to virtually any system. The MCP SDK handles
